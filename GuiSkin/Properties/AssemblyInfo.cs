@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TestGuiSkin")]
+[assembly: AssemblyTitle("GSkinLib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TestGuiSkin")]
+[assembly: AssemblyProduct("GSkinLib")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5f6e61f8-2cfc-4d50-a8c2-283cf1b6a7ff")]
+[assembly: Guid("285f83d5-3f00-4c36-adb6-cf4a39fdf76c")]
 
 // Version information for an assembly consists of the following four values:
 //
