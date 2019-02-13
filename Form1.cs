@@ -25,8 +25,18 @@ namespace TestGuiSkin
             string dir = "Images\\";
             Bitmap back = new Bitmap(dir + "pedestal_back.png");
             GuiBackground.CreateControlRegion(this, back);
-
+            
+            // Button skin
             button1.SetSkin(dir, "stow");
+
+            // Check boxskin
+            chkbox.SetSkin(dir, "check1");
+
+            skinCheckBox1.SetSkin(dir, "radio_6");
+            skinCheckBox2.SetSkin(dir, "radio_6");
+            skinCheckBox3.SetSkin(dir, "radio_6");
+
+
         }
     
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -72,6 +82,44 @@ namespace TestGuiSkin
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Clicked");
+        }
+
+        private void chkbox_Click(object sender, EventArgs e)
+        {
+
+            // how to check the check state in case you need
+            //if (chkbox.GetChecked() == false)
+            //  return;
+
+            chkbox.Toggle((c) =>
+            {
+                if (c == true)
+                {
+
+                }
+            });
+        }
+
+        private void skinCheckBox1_Click(object sender, EventArgs e)
+        {
+            skinCheckBox1.Checked(true);
+            skinCheckBox2.Checked(false);
+            skinCheckBox3.Checked(false);
+        }
+
+        private void skinCheckBox2_Click(object sender, EventArgs e)
+        {
+            skinCheckBox2.Checked(true);
+            skinCheckBox1.Checked(false);
+            skinCheckBox3.Checked(false);
+         
+        }
+
+        private void skinCheckBox3_Click(object sender, EventArgs e)
+        {
+            skinCheckBox3.Checked(true);
+            skinCheckBox1.Checked(false);
+            skinCheckBox2.Checked(false);
         }
     }
 }
