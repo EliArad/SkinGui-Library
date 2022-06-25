@@ -28,12 +28,13 @@ namespace GSkinLib
         bool m_enable = true;
         bool m_disableButtonExists = false;
 
+        string m_text = string.Empty;
         public SkinCheckBox()
         {
         
         }
 
-        public void SetSkin(string dir, string buttonName)
+        public void SetSkin(string dir, string buttonName, string text = "")
         {
             if (File.Exists(dir + buttonName + "_normal.png") == true)
                 bmp[0] = new Bitmap(dir + buttonName + "_normal.png");
@@ -59,12 +60,17 @@ namespace GSkinLib
             {
                 m_disableButtonExists = false;
             }
-                
+            if (text != string.Empty)
+            {
+                this.Text = text;
+                m_text = text;
+            }
 
             this.MouseEnter += SkinCheckBox_MouseEnter;
             this.MouseLeave += SkinCheckBox_MouseLeave;
 
             GuiBackground.CreateControlRegion(this, bmp[0]);
+            this.Text = m_text;
         }
 
 
@@ -111,10 +117,12 @@ namespace GSkinLib
                 if (m_isEnter == true && m_checked == false)
                 {
                     GuiBackground.CreateControlRegion(this, bmp[Common.ENTER]);
+                    this.Text = m_text;
                 }
                 if (m_isEnter == false && m_checked == false)
                 {
                     GuiBackground.CreateControlRegion(this, bmp[Common.LEAVE]);
+                    this.Text = m_text;
                 }
             }
         }
@@ -126,13 +134,20 @@ namespace GSkinLib
             if (m_checked == true)
             {
                 GuiBackground.CreateControlRegion(this, bmp[Common.DOWN]);
+                this.Text = m_text;
             }
             else
             {
                 if (m_isEnter == false)
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.UP]);
+                    this.Text = m_text;
+                }
                 else
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.ENTER]);
+                    this.Text = m_text;
+                }
             }
             cb(m_checked);
              
@@ -151,13 +166,20 @@ namespace GSkinLib
             if (c)
             {
                 GuiBackground.CreateControlRegion(this, bmp[Common.DOWN]);
+                this.Text = m_text;
             }
             else
             {
                 if (m_isEnter == false)
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.LEAVE]);
+                    this.Text = m_text;
+                }
                 else
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.ENTER]);
+                    this.Text = m_text;
+                }
             }           
         }
 
@@ -169,13 +191,20 @@ namespace GSkinLib
             if (m_checked)
             {
                 GuiBackground.CreateControlRegion(this, bmp[Common.DOWN]);
+                this.Text = m_text;
             }
             else
             {
                 if (m_isEnter == false)
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.LEAVE]);
+                    this.Text = m_text;
+                }
                 else
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.ENTER]);
+                    this.Text = m_text;
+                }
             }
         }
 
@@ -187,13 +216,20 @@ namespace GSkinLib
             if (m_checked)
             {
                 GuiBackground.CreateControlRegion(this, bmp[Common.DOWN]);
+                this.Text = m_text;
             }
             else
             {
                 if (m_isEnter == false)
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.LEAVE]);
+                    this.Text = m_text;
+                }
                 else
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.ENTER]);
+                    this.Text = m_text;
+                }
             }
             cb(m_checked);
         }
@@ -201,7 +237,10 @@ namespace GSkinLib
         public void Normal()
         {
             if (m_enable == true)
+            {
                 GuiBackground.CreateControlRegion(this, bmp[Common.LEAVE]);
+                this.Text = m_text;
+            }
         }
 
         public bool IsEnable()
@@ -216,6 +255,7 @@ namespace GSkinLib
             if (b == false)
             {
                 GuiBackground.CreateControlRegion(this, bmp[Common.DISABLE]);
+                this.Text = m_text;
             }
             else
             {
@@ -223,11 +263,20 @@ namespace GSkinLib
                     m_checked = m_checkedState;
 
                 if (m_isEnter == false && m_checked == false)
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.LEAVE]);
+                    this.Text = m_text;
+                }
                 if (m_isEnter == true && m_checked == false)
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.ENTER]);
+                    this.Text = m_text;
+                }
                 if (m_checked == true)
+                {
                     GuiBackground.CreateControlRegion(this, bmp[Common.DOWN]);
+                    this.Text = m_text;
+                }
             }           
         }
     }

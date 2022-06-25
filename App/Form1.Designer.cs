@@ -35,6 +35,7 @@ namespace TestGuiSkin
             this.skinCheckBox1 = new GSkinLib.SkinCheckBox();
             this.skinCheckBox2 = new GSkinLib.SkinCheckBox();
             this.skinCheckBox3 = new GSkinLib.SkinCheckBox();
+            this.chkButton = new GSkinLib.SkinCheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -87,11 +88,24 @@ namespace TestGuiSkin
             this.skinCheckBox3.UseVisualStyleBackColor = false;
             this.skinCheckBox3.Click += new System.EventHandler(this.skinCheckBox3_Click);
             // 
+            // chkButton
+            // 
+            this.chkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.chkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkButton.ForeColor = System.Drawing.Color.White;
+            this.chkButton.Location = new System.Drawing.Point(238, 105);
+            this.chkButton.Name = "chkButton";
+            this.chkButton.Size = new System.Drawing.Size(97, 33);
+            this.chkButton.TabIndex = 5;
+            this.chkButton.UseVisualStyleBackColor = false;
+            this.chkButton.Click += new System.EventHandler(this.chkButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 401);
+            this.Controls.Add(this.chkButton);
             this.Controls.Add(this.skinCheckBox3);
             this.Controls.Add(this.skinCheckBox2);
             this.Controls.Add(this.skinCheckBox1);
@@ -112,6 +126,7 @@ namespace TestGuiSkin
         private SkinCheckBox skinCheckBox1;
         private SkinCheckBox skinCheckBox2;
         private SkinCheckBox skinCheckBox3;
+        private SkinCheckBox chkButton;
     }
 }
 

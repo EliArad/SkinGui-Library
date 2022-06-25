@@ -36,6 +36,9 @@ namespace TestGuiSkin
             skinCheckBox2.SetSkin(dir, "radio_6");
             skinCheckBox3.SetSkin(dir, "radio_6");
 
+            chkButton.SetSkin(dir, "camera_btn", "Off");
+            
+
 
         }
     
@@ -120,6 +123,20 @@ namespace TestGuiSkin
             skinCheckBox3.Checked(true);
             skinCheckBox1.Checked(false);
             skinCheckBox2.Checked(false);
+        }
+
+        private void chkButton_Click(object sender, EventArgs e)
+        {
+            if (chkButton.GetChecked() == false)
+            {
+                chkButton.Checked(true);
+                chkButton.Text = "On";
+            }
+            else
+            {
+                chkButton.Checked(false);
+                chkButton.Text = "Off";
+            }
         }
     }
 }
